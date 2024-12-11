@@ -1,0 +1,547 @@
+.header {
+    width: 100%;
+    height: 120px;
+    overflow: hidden;
+    position: relative;
+}
+
+.header img {
+    height: 120px;
+    position: absolute;
+    left: 1000px;
+    transform: translateX(-50%);
+}
+
+.black-nav {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background: linear-gradient(to right, rgb(232, 142, 224), rgb(241, 117, 138));
+    font-size: 16px;
+    position: relative;
+    /* 保证下拉菜单以其为参照 */
+}
+
+.wrap {
+    width: 1226px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.black-nav .wrap .black-nav-left,
+.black-nav .wrap .black-nav-right {
+    display: flex;
+}
+
+.black-nav li {
+    list-style: none;
+    position: relative;
+    padding: 0 10px;
+    /* 增加间隔，防止重叠 */
+}
+
+.black-nav li a {
+    color: #444;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.black-nav-left li span,
+.black-nav-right li span {
+    color: pink;
+    margin: 0 12px;
+}
+
+/* 下拉菜单样式 */
+.download,
+.school,
+.bea,
+.b,
+.guilin {
+    width: 124px;
+    height: 0;
+    background: #fff;
+    box-shadow: 0 1px 5px #3b3a3a;
+    position: absolute;
+    top: 40px;
+    left: -25px;
+    /* 左对齐，避免重叠 */
+    overflow: hidden;
+    transition: height 0.3s ease;
+    /* 平滑展开 */
+    z-index: 2;
+    /* 防止被遮挡 */
+}
+
+.download img,
+.school img,
+.bea img,
+.b img,
+.guilin img {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.black-nav-left li:hover>.download,
+.black-nav-left li:hover>.school,
+.black-nav-left li:hover>.bea,
+.black-nav-left li:hover>.b,
+.black-nav-left li:hover>.guilin {
+    height: 148px;
+    /* 保证菜单不会互相覆盖 */
+}
+
+/* 箭头显示 */
+.stri {
+    width: 0;
+    height: 0;
+    border-bottom: 8px solid #fff;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    position: absolute;
+    bottom: 0;
+    left: 35%;
+    transform: translateX(-50%);
+    display: none;
+    z-index: 3;
+    /* 始终在顶部 */
+}
+
+.black-nav-left>li:hover>.stri {
+    display: block;
+}
+
+/* 避免购物车下拉菜单内容被覆盖 */
+.cart {
+    width: 40px;
+    height: 40px;
+    background-color: pink;
+    margin-left: 10px;
+    position: relative;
+    z-index: 1;
+    /* 提高层级 */
+}
+
+.cart:hover {
+    background: #fff;
+}
+
+.cart-list {
+    width: 50px;
+    height: 0;
+    background: rgb(241, 195, 203);
+    box-shadow: 0 2px 10px rgba(173, 235, 155, 0.15);
+    position: absolute;
+    right: 4px;
+    top: 40px;
+    overflow: hidden;
+    line-height: 100px;
+    transition: height 0.3s ease;
+    /* 平滑显示 */
+}
+
+.cart:hover>.cart-list {
+    height: 100px;
+    /* 确保不遮挡其他内容 */
+}
+
+/* 白色导航 */
+.white-nav {
+    width: 100%;
+    height: 80px;
+    background: #fff;
+    position: relative;
+}
+
+.logo {
+    width: 55px;
+    height: 55px;
+    background-color: #fff;
+    float: left;
+    margin-top: 22.5px;
+    overflow: hidden;
+    position: relative;
+    /* 确保子元素相对定位 */
+}
+
+.logo>img {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    transition: all 0.2s;
+    border-radius: 25px;
+}
+
+.yu,
+.gxnu {
+    position: absolute;
+    /* 必须设置为绝对定位 */
+    top: 0;
+    /* 确保垂直居中 */
+    transition: all 0.2s ease;
+    /* 添加平滑过渡 */
+}
+
+.yu {
+    left: -55px;
+    /* 初始状态在左侧隐藏 */
+}
+
+.gxnu {
+    left: 0px;
+    /* 初始状态显示 */
+}
+
+.logo:hover>.yu {
+    left: 0px;
+    /* 悬停时移动到显示位置 */
+}
+
+.logo:hover>.gxnu {
+    left: 55px;
+    /* 悬停时移动到右侧隐藏 */
+}
+
+.nav-bar {
+    width: 875px;
+    height: 100px;
+    line-height: 100px;
+    float: left;
+}
+
+.search {
+    width: 296px;
+    height: 100px;
+    float: right;
+}
+
+.bai {
+    width: 75px;
+    height: 75px;
+    margin-left: 55px;
+}
+
+.nav-bar li {
+    float: left;
+}
+
+.nav-bar li a {
+    color: #333;
+    padding: 0 20px;
+}
+
+.nav-bar li a:hover {
+    color: rgb(221, 141, 239)
+}
+
+.search input {
+    width: 244px;
+    height: 50px;
+    float: left;
+    border: 1px solid rgb(184, 184, 247);
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    margin-top: 20px;
+    padding: 0 20px;
+    border-radius: 10px;
+    border-right: 0px;
+    transition: border-color 0.2s ease;
+}
+
+.search button {
+    width: 52px;
+    height: 50px;
+    float: right;
+    margin-top: 20px;
+    border: 1px solid rgb(184, 184, 247);
+    border-radius: 10px;
+}
+
+.search button:hover {
+    background: rgb(241, 195, 203);
+    color: #fff;
+}
+
+.nav-bar-list {
+    width: 100%;
+    height: 180px;
+    background: white;
+    border-top: 1px solid rgb(117, 117, 166);
+    box-shadow: 0 3px 4px rgb(0, 0, 0, 0.1);
+    position: absolute;
+    left: 0;
+    top: 79.8px;
+    display: none;
+    z-index: 1;
+}
+
+.nav-bar li:hover>.nav-bar-list {
+    display: block;
+}
+
+.one {
+    width: 120px;
+    height: 120px;
+}
+
+.nav-bar-list li {
+    line-height: normal;
+    border-right: 4px solid #eee;
+}
+
+.nav-bar-list .name {
+    font-size: 12px;
+    color: black;
+    margin-left: 50px;
+}
+
+.banner {
+    width: 100%;
+    height: 400px;
+}
+
+/* 图片容器样式 */
+.image-slider {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* 单张图片样式 */
+.image-slider img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    /* 初始位置在右侧不可见 */
+    opacity: 0;
+    /* 初始透明度为 0 */
+    transition: all 1s ease;
+    /* 平滑过渡 */
+}
+
+/* 显示当前图片 */
+.image-slider img.active {
+    left: 0;
+    /* 位置到容器中央 */
+    opacity: 1;
+    /* 完全显示 */
+}
+
+/* 离开视图的图片 */
+.image-slider img.previous {
+    left: -100%;
+    /* 从左侧离开 */
+    opacity: 0;
+}
+
+.slide {
+    width: 234px;
+    height: 360px;
+    padding: 20px 0;
+    background: rgb(241, 195, 203, 0.7);
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.banner>.wrap {
+    position: relative;
+}
+
+.slide>ul>li {
+    height: 90px;
+    line-height: 90px;
+    text-align: left;
+    padding-left: 40px;
+    font-size: 30px;
+    font-weight: 700;
+    font-family: inherit;
+}
+
+.slide>ul>li>a {
+    color: #333;
+}
+
+.slide>ul>li:hover {
+    background-color: rgb(225, 163, 222);
+}
+
+.slide-list {
+    width: 992px;
+    height: 400px;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    position: absolute;
+    top: 0;
+    right: 234px;
+    border-right: none;
+    box-sizing: border-box;
+    box-shadow: 0 8px 16px rgba(173, 235, 155, 0.15);
+    display: none;
+}
+
+.slide-list ul {
+    width: 100%;
+}
+
+.slide-list ul li {
+    width: 240px;
+    height: 76px;
+    float: right;
+    padding: 10px 0 10px 10px;
+    box-sizing: border-box;
+    line-height: 40px;
+}
+
+.slide-list img {
+    width: 200px;
+    height: 200px;
+    padding: 10px 10px 10px 10px;
+    cursor: zoom-in;
+    transition: 0.2s;
+}
+
+.slide-list img:hover {
+    transform: scale(1.1);
+}
+
+.slide-list span {
+    color: #333;
+    font-size: 20px;
+    position: relative;
+    top: -10px;
+    right: -90px;
+}
+
+.slide li:hover .slide-list {
+    display: block;
+}
+
+.slide-list li:hover span {
+    color: #d63384;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* 优化导航栏悬停 */
+.nav-bar li a {
+    font-size: 16px;
+    font-weight: bold;
+    color: #444;
+    transition: color 0.2s ease;
+}
+
+.ad {
+    width: 100%;
+    height: 300px;
+    padding-left: 14px 0;
+    background-color: #fff;
+}
+
+.ad-img {
+    width: 290px;
+    height: 290px;
+    float: left;
+    margin-top: 10px;
+    transition: all 0.4s linear;
+    border-radius: 10px;
+}
+
+.ad-img img {
+    width: 100%;
+    height: 290px;
+    border-radius: 10px;
+}
+
+.ad-img:hover {
+    transform: scale3d(1.2, 1.2, 1);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.list {
+    position: absolute;
+    width: 224px;
+    background: linear-gradient(to right, white, rgb(183, 216, 239));
+    border: 1px solid #ddd;
+    box-shadow: 0 8px 16px rgba(173, 235, 155, 0.15);
+    border-radius: 5px;
+    right: 155px;
+    top: 70.8px;
+    display: none;
+    z-index: 1;
+    font-size: medium;
+}
+
+.show {
+    width: 100%;
+    /* 容器宽度 */
+    max-width: 900px;
+    /* 设置最大宽度 */
+    margin: 20px auto;
+    /* 上下居中，左右自动 */
+    padding: 15px;
+    /* 内边距，提升阅读体验 */
+    background: linear-gradient(to right, rgb(251, 250, 251), rgb(241, 187, 232));
+    ;
+    /* 浅灰色背景 */
+    border: 1px solid #ddd;
+    /* 边框 */
+    border-radius: 8px;
+    /* 圆角边框 */
+    font-size: 25px;
+    /* 字体大小 */
+    line-height: 1.8;
+    /* 行高，提升可读性 */
+    color: #333;
+    /* 文字颜色 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* 添加阴影，提升层次感 */
+    text-align: center;
+    /* 水平居中 */
+    display: flex;
+    /* 启用 Flexbox 布局 */
+    justify-content: center;
+    /* 水平方向居中 */
+    align-items: center;
+    /* 垂直方向居中 */
+}
+
+.modal {
+    display: none;
+    /* 初始隐藏 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    position: relative;
+}
+
+.modal img {
+    max-width: 50%;
+    max-height: 50%;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 350px;
+    /* 鼠标悬停显示为可点击状态 */
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
